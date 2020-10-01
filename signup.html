@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>Sign Up</title>
+
+		<link rel="stylesheet" type="text/css" href="sign.css"/>
+		<link rel="stylesheet" type="text/css" href="topnav.css"/>
+		
+		<script>
+				function match()
+				{
+					a=document.getElementById("pass1");
+					b=document.getElementById("pass2");
+				
+					if(a.value!=b.value)
+					{
+						alert("Password Does Not Match");
+						b.focus();
+					}
+					else
+					{
+						a=document.getElementById("form1");
+						a.action="register.jsp";
+					}
+				}
+		</script>
+
+	</head>
+	
+	<body background="img.jpg">
+
+		<center><h1>Sign Up </h1>
+	
+		Please fill this form to create an account </center><br>
+		
+		<div class="topnav">
+			<a href="home.html">Home</a>
+			<a href="available.jsp">Available</a>
+ 		 	<a href="donorsearch.html">Search for a Blood Donor</a>
+  			<a href="requestforblood.html">Post a Request for Blood</a> 
+			<a href="feedback.html">Feedback</a>
+			<a href="login.html">Login</a>
+
+		</div> <br><br>
+
+		<form id="form1" align="center" method="post">
+	
+			<input type="text" class="a1" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" 
+			placeholder="E-Mail Id" required>
+
+											
+			<select name="group" class="sel" required>
+												
+				<option value="">Group</option>
+				<option  value="A+">A+</option>
+				<option  value="A-">A-</option>
+				<option  value="B+">B+</option>
+				<option  value="B-">B-</option>
+				<option  value="O+">O+</option>
+				<option  value="O-">O-</option>
+				<option  value="AB+-">AB+</option>
+				<option  value="AB-">AB-</option>
+												
+			</select> <br>
+
+			<input type="text" calss="a1" name="uname" placeholder="Name" required>
+			<input type="text" calss="a1" name="age" placeholder="Age" required><br>
+			<input type="password" calss="a1" id="pass1" name="pass" placeholder="Enter Password" pattern=".{6,}" title="Password must have atlest 6 digits" required>
+
+			<select name="gen" class="sel" required>
+				<option Value="">Select Gender</option>
+				<option  Value="Male">Male</option>
+        			<option  Value="Female">Female</option>
+			</select><br>
+			
+			<input type="password" calss="a1" id="pass2" name="pass" placeholder="Re-Enter Password" pattern=".{6,}" title="Password must have atlest 6 digits" required>	
+			<input type="text" calss="a1" name="phn" maxlength="10"  placeholder="Mobile Number" pattern="[7-9]{1}[0-9]{9}" required title="enter correct mobile number of 10 digits and no. will be started from 7,8 or 9"><br>
+			
+			<select name="city" class="sel" required>
+				<option>City</option>
+				<option>Chhatarpur</option>
+        			<option>Nowgong</option>
+				<option>Panna</option>
+        			<option>Khajraho</option>
+				<option>Tikamgarh</option>
+        			<option>Damoh</option>
+			</select>
+			
+			<input type="text" calss="a1" name="address" placeholder="Address" required><br>
+					
+			<button type="button" calss="a2"><b>Cancel<b></button>
+			<button type="submit" onclick="match()" calss="a2"><b>submit<b></button>
+	
+		</form>
+	</body>
+</html>
